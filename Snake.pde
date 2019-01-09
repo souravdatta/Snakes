@@ -23,8 +23,13 @@ public class Snake {
     }
     
     public void move(int x, int y) {
-        xdir = x;
-        ydir = y;
+        if (!((xdir != 0) && (x != 0) && (xdir == -x))) {
+            xdir = x;
+        }
+        
+        if (!((ydir != 0) && (y != 0) && (ydir == -y))) {
+            ydir = y;
+        }
     }
     
     private void die() {
